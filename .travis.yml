@@ -1,0 +1,23 @@
+matrix:
+  include:
+    - language: java
+      before_script:
+        - cd backend
+  
+    - language: node_js
+      node_js:
+        - "stable"
+      cache:
+        directories:
+        - node_modules
+      before_script:
+        - cd frontend
+      script:
+        - npm test
+        - npm run build
+ 
+
+notifications:
+  email:
+    - abubakarabdulsalammail@gmail.com
+    - abdulmutty@yahoo.com
